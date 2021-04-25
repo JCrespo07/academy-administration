@@ -1,6 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom';
 
+import { FirebaseContext } from '../Firebase';
+
 class Admin extends React.Component {
 
   constructor() {
@@ -8,7 +10,9 @@ class Admin extends React.Component {
   }
 
   render() {
-    return <h2>Admin</h2>;
+    return(
+      <h2> Admin </h2>
+    );
   }
 }
 
