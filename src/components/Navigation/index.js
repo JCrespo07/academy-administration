@@ -1,7 +1,7 @@
 import React from 'react'
-import ReactDOM from 'react-dom';
-
 import { Link } from 'react-router-dom';
+
+import SignOutButton from '../SignOut';
 import * as ROUTES from './../constants/routes';
 
 class Navigation extends React.Component {
@@ -28,6 +28,9 @@ class Navigation extends React.Component {
           </li>
           <li>
             < Link to={ROUTES.ADMIN}>Admin</Link>
+          </li>
+          <li>
+            <SignOutButton />
           </li>
         </ul>
       </div>
