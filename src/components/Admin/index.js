@@ -1,19 +1,19 @@
 import React from 'react'
-import ReactDOM from 'react-dom';
 
-import { FirebaseContext } from '../Firebase';
+import * as ROLES from '../constants/roles';
 
-class Admin extends React.Component {
+const AdminPage = () => (
+  <div>
+    <h1>Admin</h1>
+    <p>
+      Restricted area! Only users with the admin role are authorized.
+    </p>
+  </div>
+);
 
-  constructor() {
-    super();
-  }
+//const condition = authUser =>
+//  authUser && authUser.roles == ROLES.ADMIN;
 
-  render() {
-    return(
-      <h2> Admin </h2>
-    );
-  }
-}
+//export default withAuthorization(condition)(AdminPage);
 
-export default Admin;
+export default AdminPage;

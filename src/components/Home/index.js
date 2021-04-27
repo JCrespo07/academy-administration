@@ -1,15 +1,13 @@
 import React from 'react'
-import ReactDOM from 'react-dom';
 
-class Home extends React.Component {
+import { withAuthorization } from '../Session';
 
-  constructor() {
-    super();
-  }
+const HomePage = () => (
+  <div>
+    <h1>Home Page</h1>
+  </div>
+);
 
-  render() {
-    return <h2>Home</h2>;
-  }
-}
+const condition = authUser => authUser != null;
 
-export default Home;
+export default withAuthorization(condition)(HomePage);
