@@ -20,18 +20,34 @@ import ResponsiblePersonPage from '../ResponsiblePerson';
 import StudentPage from '../Student';
  
 import * as ROUTES from './../constants/routes';
+import { withFirebase } from '../Firebase';
 
 class App extends React.Component {
 
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
+    this.state = {
+      authUser: null,
+    };
+  }
+
+  componentDidMount() {
+    this.listener = this.props.firebase.auth.onAuthStateChanged(authUser => {
+      authUser
+        ? this.setState({ authUser })
+        : this.setState({ authUser: null });
+    });
+  }
+
+  componentWillUnmount() {
+    this.listener();
   }
 
   render() {
     return (
       <Router>
         <div>
-          <Navigation />
+          <Navigation authUser={this.state.authUser} />
 
           <hr />
 
@@ -52,4 +68,4 @@ class App extends React.Component {
   }
 }
 
-export default App;
+export default withFirebase(App);
