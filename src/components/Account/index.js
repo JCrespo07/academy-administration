@@ -1,15 +1,14 @@
 import React from 'react'
-import ReactDOM from 'react-dom';
 
-class Account extends React.Component {
+import { PasswordForgetForm } from '../PasswordForget';
+import PasswordChangeForm from '../PasswordChange';
 
-  constructor() {
-    super();
-  }
+const AccountPage = () => (
+  <div>
+    <h1>Account Page</h1>
+    <PasswordForgetForm />
+    <PasswordChangeForm />
+  </div>
+);
 
-  render() {
-    return <h2>Account</h2>;
-  }
-}
-
-export default Account;
+export default AccountPage;
